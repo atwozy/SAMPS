@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231109 17:46:47.744" rpa="false" schemaversion="4">
+<suite id="s1" name="Generic" source="c:\Users\ITA-40136\SAMPS\PageObject\Generic.robot">
+<kw name="Open Exercise Site" library="library" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://automationexercise.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231109 17:46:48.866" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/'.</msg>
+<status status="PASS" starttime="20231109 17:46:48.865" endtime="20231109 17:46:53.418"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231109 17:46:53.418" endtime="20231109 17:46:53.545"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login}[pageVisibility]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231109 17:46:53.546" endtime="20231109 17:46:53.735"/>
+</kw>
+<status status="PASS" starttime="20231109 17:46:48.865" endtime="20231109 17:46:53.735"/>
+</kw>
+<test id="s1-t1" name="API Test" line="17">
+<kw name="Register Account" library="apiTest">
+<kw name="Name" library="FakerLibrary">
+<var>${generateName}</var>
+<doc>:example: 'John Doe'</doc>
+<msg timestamp="20231109 17:46:53.737" level="INFO">${generateName} = Ashley Thomas</msg>
+<status status="PASS" starttime="20231109 17:46:53.736" endtime="20231109 17:46:53.737"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${generateEmail}</var>
+<msg timestamp="20231109 17:46:53.738" level="INFO">${generateEmail} = barronmichael@example.org</msg>
+<status status="PASS" starttime="20231109 17:46:53.737" endtime="20231109 17:46:53.738"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${generatePassword}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20231109 17:46:53.739" level="INFO">${generatePassword} = 9$4CNdbSrK</msg>
+<status status="PASS" starttime="20231109 17:46:53.738" endtime="20231109 17:46:53.739"/>
+</kw>
+<kw name="Prefix" library="FakerLibrary">
+<var>${generateTitle}</var>
+<msg timestamp="20231109 17:46:53.739" level="INFO">${generateTitle} = Mr.</msg>
+<status status="PASS" starttime="20231109 17:46:53.739" endtime="20231109 17:46:53.739"/>
+</kw>
+<kw name="Day Of Month" library="FakerLibrary">
+<var>${generateDay}</var>
+<msg timestamp="20231109 17:46:53.739" level="INFO">${generateDay} = 20</msg>
+<status status="PASS" starttime="20231109 17:46:53.739" endtime="20231109 17:46:53.740"/>
+</kw>
+<kw name="Month" library="FakerLibrary">
+<var>${generateMonth}</var>
+<msg timestamp="20231109 17:46:53.740" level="INFO">${generateMonth} = 04</msg>
+<status status="PASS" starttime="20231109 17:46:53.740" endtime="20231109 17:46:53.740"/>
+</kw>
+<kw name="Year" library="FakerLibrary">
+<var>${generateYear}</var>
+<msg timestamp="20231109 17:46:53.740" level="INFO">${generateYear} = 2016</msg>
+<status status="PASS" starttime="20231109 17:46:53.740" endtime="20231109 17:46:53.740"/>
+</kw>
+<kw name="Split String" library="String">
+<var>@{split}</var>
+<arg>${generateName}</arg>
+<arg>${SPACE}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20231109 17:46:53.741" level="INFO">@{split} = [ Ashley | Thomas ]</msg>
+<status status="PASS" starttime="20231109 17:46:53.740" endtime="20231109 17:46:53.741"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${splitFirstName}</var>
+<arg>${split}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231109 17:46:53.741" level="INFO">${splitFirstName} = Ashley</msg>
+<status status="PASS" starttime="20231109 17:46:53.741" endtime="20231109 17:46:53.741"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${splitLastName}</var>
+<arg>${split}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231109 17:46:53.742" level="INFO">${splitLastName} = Thomas</msg>
+<status status="PASS" starttime="20231109 17:46:53.741" endtime="20231109 17:46:53.742"/>
+</kw>
+<kw name="Company" library="FakerLibrary">
+<var>${generateCompany}</var>
+<doc>:example: 'Acme Ltd'</doc>
+<msg timestamp="20231109 17:46:53.742" level="INFO">${generateCompany} = Jackson-Baxter</msg>
+<status status="PASS" starttime="20231109 17:46:53.742" endtime="20231109 17:46:53.742"/>
+</kw>
+<kw name="Address" library="FakerLibrary">
+<var>${generateAddress1}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<msg timestamp="20231109 17:46:53.743" level="INFO">${generateAddress1} = 382 Cochran Point Suite 115
+Barrettchester, MT 26692</msg>
+<status status="PASS" starttime="20231109 17:46:53.743" endtime="20231109 17:46:53.743"/>
+</kw>
+<kw name="Address" library="FakerLibrary">
+<var>${generateAddress2}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<msg timestamp="20231109 17:46:53.744" level="INFO">${generateAddress2} = 070 Harrell Pine Suite 401
+Lake Kyle, SC 07110</msg>
+<status status="PASS" starttime="20231109 17:46:53.743" endtime="20231109 17:46:53.744"/>
+</kw>
+<kw name="Country" library="FakerLibrary">
+<var>${generateCountry}</var>
+<msg timestamp="20231109 17:46:53.744" level="INFO">${generateCountry} = Brunei Darussalam</msg>
+<status status="PASS" starttime="20231109 17:46:53.744" endtime="20231109 17:46:53.744"/>
+</kw>
+<kw name="Zipcode In State" library="FakerLibrary">
+<var>${generateZipCode}</var>
+<msg timestamp="20231109 17:46:53.744" level="INFO">${generateZipCode} = 47818</msg>
+<status status="PASS" starttime="20231109 17:46:53.744" endtime="20231109 17:46:53.744"/>
+</kw>
+<kw name="State" library="FakerLibrary">
+<var>${generateState}</var>
+<msg timestamp="20231109 17:46:53.745" level="INFO">${generateState} = Minnesota</msg>
+<status status="PASS" starttime="20231109 17:46:53.745" endtime="20231109 17:46:53.745"/>
+</kw>
+<kw name="City" library="FakerLibrary">
+<var>${generateCity}</var>
+<doc>:example: 'Sashabury'</doc>
+<msg timestamp="20231109 17:46:53.746" level="INFO">${generateCity} = East Michaelmouth</msg>
+<status status="PASS" starttime="20231109 17:46:53.746" endtime="20231109 17:46:53.746"/>
+</kw>
+<kw name="Basic Phone Number" library="FakerLibrary">
+<var>${generateMobileNumber}</var>
+<msg timestamp="20231109 17:46:53.747" level="INFO">${generateMobileNumber} = 205-242-0101</msg>
+<status status="PASS" starttime="20231109 17:46:53.746" endtime="20231109 17:46:53.747"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${userData}</var>
+<arg>name=${generateName}</arg>
+<arg>email=${generateEmail}</arg>
+<arg>password=${generatePassword}</arg>
+<arg>title=${generateTitle}</arg>
+<arg>birth_date=${generateDay}</arg>
+<arg>birth_month=${generateMonth}</arg>
+<arg>birth_year=${generateYear}</arg>
+<arg>firstname=${splitFirstName}</arg>
+<arg>lastname=${splitLastName}</arg>
+<arg>company=${generateCompany}</arg>
+<arg>address1=${generateAddress1}</arg>
+<arg>address2=${generateAddress2}</arg>
+<arg>country=${generateCountry}</arg>
+<arg>zipcode=${generateZipCode}</arg>
+<arg>state=${generateState}</arg>
+<arg>city=${generateCity}</arg>
+<arg>mobile_number=${generateMobileNumber}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231109 17:46:53.748" level="INFO">${userData} = {'name': 'Ashley Thomas', 'email': 'barronmichael@example.org', 'password': '9$4CNdbSrK', 'title': 'Mr.', 'birth_date': '20', 'birth_month': '04', 'birth_year': '2016', 'firstname': 'Ashley', 'lastnam...</msg>
+<status status="PASS" starttime="20231109 17:46:53.747" endtime="20231109 17:46:53.748"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${API_Register}</arg>
+<arg>data=${userData}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20231109 17:46:55.066" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
+ path_url=/api/createAccount 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '417', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=Ashley+Thomas&amp;email=barronmichael%40example.org&amp;password=9%244CNdbSrK&amp;title=Mr.&amp;birth_date=20&amp;birth_month=04&amp;birth_year=2016&amp;firstname=Ashley&amp;lastname=Thomas&amp;company=Jackson-Baxter&amp;address1=382+Cochran+Point+Suite+115%0ABarrettchester%2C+MT+26692&amp;address2=070+Harrell+Pine+Suite+401%0ALake+Kyle%2C+SC+07110&amp;country=Brunei+Darussalam&amp;zipcode=47818&amp;state=Minnesota&amp;city=East+Michaelmouth&amp;mobile_number=205-242-0101 
+ </msg>
+<msg timestamp="20231109 17:46:55.066" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 09 Nov 2023 09:47:18 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=D1%2BgASH91o0nJxJfDOFYSwC%2Ba4xOhisuxb8gNISnB9v0fQnExSx6WvYgTvkdAl%2FXWUXpRRyJBRYi6WQwDSYX4eeIeKPG41F4fgioXBD6%2BAtxG%2BdNsMvKCON%2BvgxpWiBMBChhZIga5WMF"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8235222aeb6e4112-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 201, "message": "User created!"} 
+ </msg>
+<msg timestamp="20231109 17:46:55.066" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231109 17:46:53.748" endtime="20231109 17:46:55.067"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231109 17:46:55.067" level="INFO">{'responseCode': 201, 'message': 'User created!'}</msg>
+<status status="PASS" starttime="20231109 17:46:55.067" endtime="20231109 17:46:55.067"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${userData}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231109 17:46:55.068" level="INFO">{'name': 'Ashley Thomas', 'email': 'barronmichael@example.org', 'password': '9$4CNdbSrK', 'title': 'Mr.', 'birth_date': '20', 'birth_month': '04', 'birth_year': '2016', 'firstname': 'Ashley', 'lastname': 'Thomas', 'company': 'Jackson-Baxter', 'address1': '382 Cochran Point Suite 115\nBarrettchester, MT 26692', 'address2': '070 Harrell Pine Suite 401\nLake Kyle, SC 07110', 'country': 'Brunei Darussalam', 'zipcode': '47818', 'state': 'Minnesota', 'city': 'East Michaelmouth', 'mobile_number': '205-242-0101'}</msg>
+<status status="PASS" starttime="20231109 17:46:55.068" endtime="20231109 17:46:55.068"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${generateEmail}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231109 17:46:55.068" level="INFO">${generateEmail} = barronmichael@example.org</msg>
+<status status="PASS" starttime="20231109 17:46:55.068" endtime="20231109 17:46:55.068"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${generatePassword}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231109 17:46:55.069" level="INFO">${generatePassword} = 9$4CNdbSrK</msg>
+<status status="PASS" starttime="20231109 17:46:55.069" endtime="20231109 17:46:55.069"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.json()['message']}</arg>
+<arg>${expectedResponse}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231109 17:46:55.069" endtime="20231109 17:46:55.070"/>
+</kw>
+<status status="PASS" starttime="20231109 17:46:53.736" endtime="20231109 17:46:55.070"/>
+</kw>
+<kw name="Delete Account" library="apiTest">
+<kw name="Set Variable" library="BuiltIn">
+<var>${deleteAccount}</var>
+<arg>${generateEmail}</arg>
+<arg>${generatePassword}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231109 17:46:55.071" level="INFO">${deleteAccount} = ['barronmichael@example.org', '9$4CNdbSrK']</msg>
+<status status="PASS" starttime="20231109 17:46:55.071" endtime="20231109 17:46:55.071"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${delete}</var>
+<arg>email=${deleteAccount[0]}</arg>
+<arg>password=${deleteAccount[1]}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231109 17:46:55.073" level="INFO">${delete} = {'email': 'barronmichael@example.org', 'password': '9$4CNdbSrK'}</msg>
+<status status="PASS" starttime="20231109 17:46:55.072" endtime="20231109 17:46:55.073"/>
+</kw>
+<kw name="DELETE" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${API_Delete}</arg>
+<arg>data=${delete}</arg>
+<doc>Sends a DELETE request.</doc>
+<msg timestamp="20231109 17:46:56.367" level="INFO">DELETE Request : url=https://automationexercise.com/api/deleteAccount 
+ path_url=/api/deleteAccount 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '55', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=email=barronmichael%40example.org&amp;password=9%244CNdbSrK 
+ </msg>
+<msg timestamp="20231109 17:46:56.368" level="INFO">DELETE Response : url=https://automationexercise.com/api/deleteAccount 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 09 Nov 2023 09:47:19 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, DELETE', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=GoHNsrd9TE64%2BD%2Bt91Fn51ecskZQX9Z20BeVJQBcODNbKaK7fRVqdhSau1i3TqyEYgMn4DNQaj1dOFtmcwKENu8dSDsN13LfCrPYnMyP13LCIHx2JOUQBEGFE9mVPo1oqGwPuousZvSG"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82352232fdcd3fee-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 200, "message": "Account deleted!"} 
+ </msg>
+<msg timestamp="20231109 17:46:56.369" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231109 17:46:55.073" endtime="20231109 17:46:56.369"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231109 17:46:56.372" level="INFO">{'responseCode': 200, 'message': 'Account deleted!'}</msg>
+<status status="PASS" starttime="20231109 17:46:56.370" endtime="20231109 17:46:56.373"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.json()['message']}</arg>
+<arg>${deletedResponse}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231109 17:46:56.374" endtime="20231109 17:46:56.377"/>
+</kw>
+<status status="PASS" starttime="20231109 17:46:55.070" endtime="20231109 17:46:56.377"/>
+</kw>
+<status status="PASS" starttime="20231109 17:46:53.735" endtime="20231109 17:46:56.379"/>
+</test>
+<status status="PASS" starttime="20231109 17:46:47.752" endtime="20231109 17:46:56.384"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Generic">Generic</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

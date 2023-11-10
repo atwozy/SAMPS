@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231107 18:18:24.254" rpa="false" schemaversion="4">
+<suite id="s1" name="Asd" source="C:\Users\ITA-40136\SAMPS\PageObject\asd.robot">
+<test id="s1-t1" name="asdasd" line="7">
+<kw name="Name" library="FakerLibrary">
+<var>${asasd}</var>
+<doc>:example: 'John Doe'</doc>
+<msg timestamp="20231107 18:18:24.670" level="INFO">${asasd} = Brandon Hammond</msg>
+<status status="PASS" starttime="20231107 18:18:24.670" endtime="20231107 18:18:24.670"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${asasd}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231107 18:18:24.671" endtime="20231107 18:18:24.672"/>
+</kw>
+<status status="PASS" starttime="20231107 18:18:24.669" endtime="20231107 18:18:24.672"/>
+</test>
+<status status="PASS" starttime="20231107 18:18:24.255" endtime="20231107 18:18:24.673"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Asd">Asd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
